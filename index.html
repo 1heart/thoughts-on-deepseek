@@ -1,22 +1,75 @@
 <h2 id="summary">Summary</h2>
-<p>DeepSeek, a small but talented lab spun out of a Chinese hedge fund, managed to approximately replicate OpenAI&#39;s o1 (publicly released September 12) and put it out for free as an open-weight model r1, which is very close to the absolute frontier of model capabilities and earlier than relevant Western competitors Anthropic, Meta, and x.AI. (The current publicly-known frontier of model capability is OpenAI o3, announced Dec 20; Google DeepMind on December 20 announced Gemini 2.0 Flash Thinking, of which the January 21 version achieves comparable performance to o1).</p>
+<p>DeepSeek, a small but talented lab spun out of a Chinese hedge fund,
+managed to approximately replicate OpenAI’s o1 (publicly released
+September 12) and put it out for free as an open-weight model r1, which
+is very close to the absolute frontier of model capabilities and earlier
+than relevant Western competitors Anthropic, Meta, and x.AI. (The
+current publicly-known frontier of model capability is OpenAI o3,
+announced Dec 20; Google DeepMind on December 20 announced Gemini 2.0
+Flash Thinking, of which the January 21 version achieves comparable
+performance to o1).</p>
 <h2 id="implications">Implications</h2>
-<ol>
-<li>It&#39;s free to use, cheap to run, and extremely performant; this severely undercuts closed-source <strong>model serving</strong> businesses (OpenAI, Anthropic; to a lesser extent GDM, x.AI).</li>
-<li>More importantly for the future <strong>training compute</strong> landscape (i.e. NVIDIA stock price), DeepSeek managed to train the model with much fewer compute resources than anyone expected.<ol>
-<li>A small clarification: the number everyone is bandying about is that it <strong>cost $5.5M to train</strong> -- this is purely an estimate of the cost of doing a single <em>base</em> model training run by renting the GPUs on the open market, and the actual cost to DeepSeek is significantly higher (multiple training run attempts, salaries, fixed costs of setting up a cluster, the actual reinforcement learning training step to produce r1). Still, the total cost is at least an order of magnitude lower than a comparable Western lab.</li>
-<li>The <strong>technical approach</strong> (reinforcement learning on chain-of-thought) is very similar to what is publicly known about o1. Though it requires a good pre-trained model (the costliest step in terms of compute), it can quickly increase model capabilities with much less compute. It&#39;s also simpler than expected (they explain what other, more complex methods they tried), and show that training small models on the outputs of r1 gives them strong capabilities (&quot;model distillation&quot;), further reducing inference cost.</li>
+<ol type="1">
+<li>It’s free to use, cheap to run, and extremely performant; this
+severely undercuts closed-source <strong>model serving</strong>
+businesses (OpenAI, Anthropic; to a lesser extent GDM, x.AI).</li>
+<li>More importantly for the future <strong>training compute</strong>
+landscape (i.e. NVIDIA stock price), DeepSeek managed to train the model
+with much fewer compute resources than anyone expected.
+<ol type="1">
+<li>A small clarification: the number everyone is bandying about is that
+it <strong>cost $5.5M to train</strong> – this is purely an estimate of
+the cost of doing a single <em>base</em> model training run by renting
+the GPUs on the open market, and the actual cost to DeepSeek is
+significantly higher (multiple training run attempts, salaries, fixed
+costs of setting up a cluster, the actual reinforcement learning
+training step to produce r1). Still, the total cost is at least an order
+of magnitude lower than a comparable Western lab.</li>
+<li>The <strong>technical approach</strong> (reinforcement learning on
+chain-of-thought) is very similar to what is publicly known about o1.
+Though it requires a good pre-trained model (the costliest step in terms
+of compute), it can quickly increase model capabilities with much less
+compute. It’s also simpler than expected (they explain what other, more
+complex methods they tried), and show that training small models on the
+outputs of r1 gives them strong capabilities (“model distillation”),
+further reducing inference cost.</li>
+</ol></li>
+<li>What this implies about China’s position:
+<ol type="1">
+<li>DeepSeek was forced to be <strong>inventive and highly
+efficient</strong> because of significant chip export controls; for
+example, they were able to extract more compute than expected from the
+China-specific chips that NVIDIA were allowed to sell them.</li>
+<li>However, that <strong>does <em>not</em> mean chip export controls
+have failed</strong>: they have <em>significantly impeded</em> progress
+by DeepSeek and other Chinese AI labs, and the DeepSeek CEO explicitly
+highlighted access to advanced chips to be the primary bottleneck over
+e.g. additional funding.</li>
+<li>DeepSeek’s employees are primarily (extremely strong) Chinese
+students educated within China, not those who did PhDs outside of China,
+highlighting the <strong>depth of Chinese domestic technical
+talent</strong>.</li>
+<li>There’s a lot of <strong>speculation on whether DeepSeek somehow
+“cheated”</strong>, e.g. (1) by secretly having access to large amounts
+of banned chips provided to them by the Chinese government as most
+publicly suggested by Alexandr Wang, (2) by conducting espionage within
+Western labs like OpenAI to steal the secrets, (3) by training on the
+outputs of o1, which is against the OpenAI terms of use. These reflect a
+sentiment of absolute shock that such a strong model could be made with
+so few resources. My personal opinion is that, (A) given DeepSeek was
+not one of the main national AI champions (e.g. 01, Alibaba, Bytedance,
+Huawei; in fact, the Chinese government was not happy with DeepSeek’s
+parent hedge fund pursuing quantitative trading), (B) the r1 results
+have been replicated immediately on a small scale by grad students, (C)
+o1 chain-of-thought is hidden and therefore distillation could have only
+helped the base v3 model rather than lead to the innovations in r1 (the
+model that <em>actually</em> surprised the markets), it is unlikely they
+are the front of a CCP psyop <em>up to now</em> and this is purely cope
+when confronted with an unusually efficient and innovative company. (Of
+course, the DeepSeek CEO was seen this week meeting with senior
+government officials, which means this almost certainly will change
+going forward.)</li>
+</ol></li>
 </ol>
-</li>
-<li>What this implies about China&#39;s position:<ol>
-<li>DeepSeek was forced to be <strong>inventive and highly efficient</strong> because of significant chip export controls; for example, they were able to extract more compute than expected from the China-specific chips that NVIDIA were allowed to sell them.</li>
-<li>However, that <strong>does <em>not</em> mean chip export controls have failed</strong>: they have <em>significantly impeded</em> progress by DeepSeek and other Chinese AI labs, and the DeepSeek CEO explicitly highlighted access to advanced chips to be the primary bottleneck over e.g. additional funding.</li>
-<li>DeepSeek&#39;s employees are primarily (extremely strong) Chinese students educated within China, not those who did PhDs outside of China, highlighting the <strong>depth of Chinese domestic technical talent</strong>.</li>
-<li>There&#39;s a lot of <strong>speculation on whether DeepSeek somehow &quot;cheated&quot;</strong>, e.g. (1) by secretly having access to large amounts of banned chips provided to them by the Chinese government as most publicly suggested by Alexandr Wang, (2) by conducting espionage within Western labs like OpenAI to steal the secrets, (3) by training on the outputs of o1, which is against the OpenAI terms of use.
-These reflect a sentiment of absolute shock that such a strong model could be made with so few resources. My personal opinion is that, (A) given DeepSeek was not one of the main national AI champions (e.g. 01, Alibaba, Bytedance, Huawei; in fact, the Chinese government was not happy with DeepSeek&#39;s parent hedge fund pursuing quantitative trading), (B) the r1 results have been replicated immediately on a small scale by grad students, (C) o1 chain-of-thought is hidden and therefore distillation could have only helped the base v3 model rather than lead to the innovations in r1 (the model that <em>actually</em> surprised the markets), it is unlikely they are the front of a CCP psyop <em>up to now</em> and this is purely cope when confronted with an unusually efficient and innovative company. (Of course, the DeepSeek CEO was seen this week meeting with senior government officials, which means this almost certainly will change going forward.)</li>
-</ol>
-</li>
-</ol>
-<hr>
+<hr />
 <p><em>Last updated 1 Feb, 2025.</em></p>
-
